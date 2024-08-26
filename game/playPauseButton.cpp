@@ -22,7 +22,12 @@ void PlayPauseButton::handleInput(Vector2 mousePosition)
 		break;
 
 	case Hover:
-		if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+		if (!CheckCollisionPointRec(mousePosition, screenPosition))
+		{
+			state = Normal;
+			textureSource = { 0, 0, 16, 16 };
+		}
+		else if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 		{
 			state = Click;
 			textureSource = { 0, 32, 16, 16 };
