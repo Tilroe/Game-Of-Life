@@ -9,9 +9,6 @@ Game::Game(int screenWidth, int screenHeight) :
 
 	current_ = &buffers[0];
 	next_ = &buffers[1];
-	current_->turnOn(2, 2);
-	current_->turnOn(2, 3);
-	current_->turnOn(2, 4);
 }
 
 void Game::update(float dt) 
