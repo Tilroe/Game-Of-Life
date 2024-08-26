@@ -8,24 +8,17 @@ Game::Game(int screenWidth, int screenHeight) :
 
 	current_ = &buffers[0];
 	next_ = &buffers[1];
-
-	// Ocillator
-	/*current_->turnOn(1, 1);
-	current_->turnOn(1, 2);
-	current_->turnOn(1, 3);*/
-
-	// Slider
-	current_->turnOn(3, 3);
-	current_->turnOn(3, 4);
-	current_->turnOn(3, 5);
-	current_->turnOn(2, 5);
-	current_->turnOn(1, 4);
 }
 
-Game::~Game() 
+void Game::handleInput()
 {
-
+	switch (state)
+	{
+	default:
+		break;
+	}
 }
+
 
 void Game::update() 
 {

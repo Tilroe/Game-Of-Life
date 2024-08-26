@@ -7,11 +7,18 @@ class Game
 {
 public:
 	Game(int screenWidth, int screenHighet);
-	~Game();
+	void handleInput();
 	void update();
 	void draw() const;
 
 private:
+	static enum GameState
+	{
+		PAUSE,
+		PLAY
+	};
+	GameState state = PAUSE;
+
 	void swap();
 
 	int TILE_SIZE = 32;
