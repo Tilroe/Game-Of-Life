@@ -1,4 +1,5 @@
 #include "game.h"
+#include <cmath>
 
 Game::Game(int screenWidth, int screenHeight) :
 	worldWidth(screenWidth / TILE_SIZE),
@@ -8,20 +9,17 @@ Game::Game(int screenWidth, int screenHeight) :
 
 	current_ = &buffers[0];
 	next_ = &buffers[1];
+	current_->turnOn(2, 2);
+	current_->turnOn(2, 3);
+	current_->turnOn(2, 4);
 }
 
-void Game::handleInput()
+void Game::update(float dt) 
 {
-	switch (state)
-	{
-	default:
-		break;
-	}
-}
+	time += dt;
+	if (time < updateTime) return;
+	time = std::fmod(time, updateTime);
 
-
-void Game::update() 
-{
 	next_->clear();
 
 	// Iterate each tile
@@ -71,8 +69,6 @@ void Game::swap()
 
 void Game::draw() const 
 {
-	BeginDrawing();
-	ClearBackground(RAYWHITE);
 	for (int row = 0; row < worldHeight; row++) 
 	{
 		for (int col = 0; col < worldWidth; col++) 
@@ -90,5 +86,4 @@ void Game::draw() const
 			DrawRectangle(col * TILE_SIZE, row * TILE_SIZE, TILE_SIZE, TILE_SIZE, c);
 		}
 	}
-	EndDrawing();
 }
