@@ -14,7 +14,7 @@ int main()
 	const int screenHeight = GetMonitorHeight(GetCurrentMonitor());
 
 	Game game(screenWidth, screenHeight);
-	PlayPauseButton button;
+	PlayPauseButton button(game);
 
 	while (!WindowShouldClose()) 
 	{

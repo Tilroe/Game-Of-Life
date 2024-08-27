@@ -1,4 +1,10 @@
 #include "playPauseButton.h"
+#include "game.h"
+
+PlayPauseButton::PlayPauseButton(Game& game) :
+	game(game)
+{
+}
 
 PlayPauseButton::~PlayPauseButton()
 {
@@ -12,11 +18,11 @@ void PlayPauseButton::update(float dt)
 
 void PlayPauseButton::handleInput(Vector2 mousePosition)
 {
-	switch (state) {
+	switch (buttonState) {
 	case Normal:
 		if (CheckCollisionPointRec(mousePosition, screenPosition)) 
 		{
-			state = Hover;
+			buttonState = Hover;
 			textureSource = { 0, 16, 16, 16 };
 		}
 		break;
@@ -24,12 +30,12 @@ void PlayPauseButton::handleInput(Vector2 mousePosition)
 	case Hover:
 		if (!CheckCollisionPointRec(mousePosition, screenPosition))
 		{
-			state = Normal;
+			buttonState = Normal;
 			textureSource = { 0, 0, 16, 16 };
 		}
 		else if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 		{
-			state = Click;
+			buttonState = Click;
 			textureSource = { 0, 32, 16, 16 };
 		}
 		break;
@@ -37,8 +43,9 @@ void PlayPauseButton::handleInput(Vector2 mousePosition)
 	case Click:
 		if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT))
 		{
-			play = !play;
-			state = Normal;
+			Game::GameState& gameState = game.getGameState();
+			gameState = (gameState == Game::PLAY) ? Game::PAUSE : Game::PLAY;
+			buttonState = Normal;
 			textureSource = { 0, 0, 16, 16 };
 		}
 		break;
@@ -48,6 +55,6 @@ void PlayPauseButton::handleInput(Vector2 mousePosition)
 
 void PlayPauseButton::draw()
 {
-	textureSource.x = (play) ? 0.0 : 16.0;
+	textureSource.x = (game.getGameState() == Game::PAUSE) ? 0.0f : 16.0f;
 	DrawTexturePro(texture, textureSource, screenPosition, {0, 0}, 0.0, WHITE);
 }

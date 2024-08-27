@@ -9,52 +9,64 @@ Game::Game(int screenWidth, int screenHeight) :
 
 	current_ = &buffers[0];
 	next_ = &buffers[1];
+
+	current_->turnOn(20, 20);
+	current_->turnOn(20, 21);
+	current_->turnOn(20, 22);
 }
 
 void Game::update(float dt) 
 {
-	time += dt;
-	if (time < updateTime) return;
-	time = std::fmod(time, updateTime);
-
-	next_->clear();
-
-	// Iterate each tile
-	for (int row = 0; row < worldHeight; row++) 
+	if (state == PLAY)
 	{
-		for (int col = 0; col < worldWidth; col++) 
-		{
-			char& tile = current_->getTile(col, row);
+		time += dt;
+		if (time < updateTime) return;
+		time = std::fmod(time, updateTime);
 
-			// Check tile neighbours
-			int yMin = std::max(0, row - 1);
-			int yMax = std::min(worldHeight - 1, row + 1);
-			int xMin = std::max(0, col - 1);
-			int xMax = std::min(worldWidth - 1, col + 1);
-			int neighbours = 0;
-			for (int y = yMin; y <= yMax; y++) 
+		next_->clear();
+
+		// Iterate each tile
+		for (int row = 0; row < worldHeight; row++) 
+		{
+			for (int col = 0; col < worldWidth; col++) 
 			{
-				for (int x = xMin; x <= xMax; x++) 
+				char& tile = current_->getTile(col, row);
+
+				// Check tile neighbours
+				int yMin = std::max(0, row - 1);
+				int yMax = std::min(worldHeight - 1, row + 1);
+				int xMin = std::max(0, col - 1);
+				int xMax = std::min(worldWidth - 1, col + 1);
+				int neighbours = 0;
+				for (int y = yMin; y <= yMax; y++) 
 				{
-					if ((x == col) && (y == row)) continue; // Don't count self
-					if (current_->getTile(x, y) == ON) { neighbours++; }
+					for (int x = xMin; x <= xMax; x++) 
+					{
+						if ((x == col) && (y == row)) continue; // Don't count self
+						if (current_->getTile(x, y) == ON) { neighbours++; }
+					}
+				}
+
+				// Rules
+				switch (tile) 
+				{
+				case ON:
+					if (neighbours == 2 || neighbours == 3) { next_->turnOn(col, row); }
+					break;
+				case OFF:
+					if (neighbours == 3) { next_->turnOn(col, row); }
+					break;
 				}
 			}
-
-			// Rules
-			switch (tile) 
-			{
-			case ON:
-				if (neighbours == 2 || neighbours == 3) { next_->turnOn(col, row); }
-				break;
-			case OFF:
-				if (neighbours == 3) { next_->turnOn(col, row); }
-				break;
-			}
 		}
-	}
 
-	swap();
+		swap();
+	}
+}
+
+Game::GameState& Game::getGameState()
+{
+	return state;
 }
 
 void Game::swap()
@@ -84,3 +96,5 @@ void Game::draw() const
 		}
 	}
 }
+
+
