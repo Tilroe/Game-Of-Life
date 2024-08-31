@@ -1,7 +1,3 @@
----
-
-
----
 # Conway's Game of Life
 ![](gospers_glider_gun.gif)
 # Intro
