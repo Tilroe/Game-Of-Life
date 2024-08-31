@@ -8,7 +8,7 @@
       <UniqueIdentifier>{E9C7FDCE-D52A-8D73-7EB0-C5296AF258F6}</UniqueIdentifier>
     </Filter>
     <Filter Include="Content">
-      <UniqueIdentifier>{d32e582e-656e-420f-9f33-bf5741f93a53}</UniqueIdentifier>
+      <UniqueIdentifier>{3dd15e59-65d4-4e43-af5d-e814557563dd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -21,6 +21,9 @@
     <ClCompile Include="tileBuffer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="playPauseButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -29,5 +32,13 @@
     <ClInclude Include="tileBuffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="playPauseButton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Content\PlayPause.png">
+      <Filter>Content</Filter>
+    </Image>
   </ItemGroup>
 </Project>

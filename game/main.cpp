@@ -1,5 +1,6 @@
+#include "raylib.h"
 #include "game.h"
-#include <cmath>
+#include "playPauseButton.h"
 
 int main() 
 {
@@ -12,19 +13,20 @@ int main()
 	const int screenWidth = GetMonitorWidth(GetCurrentMonitor());
 	const int screenHeight = GetMonitorHeight(GetCurrentMonitor());
 
-	const float UPDATE_TIME = 0.5f;
 	Game game(screenWidth, screenHeight);
-	float time = 0.f;
+	PlayPauseButton button(game);
 
 	while (!WindowShouldClose()) 
 	{
-		time += GetFrameTime();
-		if (time > UPDATE_TIME)
-		{
-			game.update();
-			time = std::fmod(time, UPDATE_TIME);
-		}
+		float dt = GetFrameTime();
+		game.update(dt);
+		button.update(dt);
+
+		BeginDrawing();
+		ClearBackground(RAYWHITE);
 		game.draw();
+		button.draw();
+		EndDrawing();
 	}
 
 	return 0;
