@@ -142,7 +142,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>DEBUG;PLATFORM_DESKTOP;GRAPHICS_API_OPENGL_33;_WINSOCK_DEPRECATED_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;src;include;..\raylib-master\src;..\raylib-master\src\external;..\raylib-master\src\external\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;src;include;..\raylib\src;..\raylib\src\external;..\raylib\src\external\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
@@ -267,11 +267,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ProjectReference Include="..\raylib-master\raylib.vcxproj">
-      <Project>{8898EA18-743A-15EF-5DF5-284349369C3F}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="playPauseButton.cpp" />
     <ClCompile Include="tileBuffer.cpp" />
@@ -287,6 +282,11 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\raylib\projects\VS2022\raylib\raylib.vcxproj">
+      <Project>{e89d61ac-55de-4482-afd4-df7242ebc859}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
