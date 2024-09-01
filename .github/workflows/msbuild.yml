@@ -27,7 +27,7 @@ jobs:
 
     strategy:
       matrix:
-        architecture: [x86, x64]  # Specify the architectures here
+        architecture: [Win32, x64]  # Specify the architectures here
     
     steps:
     - uses: actions/checkout@v4
