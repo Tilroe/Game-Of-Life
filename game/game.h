@@ -6,22 +6,19 @@
 class Game 
 {
 public:
-	Game(int screenWidth, int screenHighet);
-	void update(float dt);
-	void draw() const;
+	Game(const int grid_width, const int grid_height);
+	virtual void update(float dt) = 0;
+	virtual void draw() const = 0;
 
 	enum GameState { PAUSE, PLAY };
-	GameState& getGameState();
+	inline GameState& get_game_state();
 
 private:
-	void swap();
+	virtual void swap();
 	
-	int TILE_SIZE = 32;
-	const int worldWidth, worldHeight;
-	float time = 0.f;
-	const float updateTime = 0.5f;
 	GameState state = PLAY;
-	std::vector<TileBuffer> buffers;
-	TileBuffer *current_;
-	TileBuffer *next_;
+	const int grid_width, grid_height;
+	float time = 0.f;
+	const float update_time = 0.5f;
+	
 };

@@ -10,12 +10,15 @@
     <Filter Include="Content">
       <UniqueIdentifier>{3dd15e59-65d4-4e43-af5d-e814557563dd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Game">
+      <UniqueIdentifier>{69a20ecf-e62d-44be-ac74-8baffc3ecb08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game">
+      <UniqueIdentifier>{c9c6aee3-2c4b-4943-ab3e-93521637aca7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="tileBuffer.cpp">
@@ -24,16 +27,19 @@
     <ClCompile Include="playPauseButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="tileBuffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="playPauseButton.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Header Files\Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
