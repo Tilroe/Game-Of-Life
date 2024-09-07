@@ -6,15 +6,15 @@
 class Game 
 {
 public:
-	Game(const int grid_width, const int grid_height);
+	Game(const int grid_width = 256, const int grid_height = 256);
 	virtual void update(float dt) = 0;
 	virtual void draw() const = 0;
 
 	enum GameState { PAUSE, PLAY };
-	inline GameState& get_game_state();
+	inline GameState& get_game_state() { return state; }
 
 private:
-	virtual void swap();
+	virtual void swap() = 0;
 	
 	GameState state = PLAY;
 	const int grid_width, grid_height;

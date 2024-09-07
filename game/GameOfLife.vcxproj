@@ -187,11 +187,13 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="playPauseButton.cpp" />
+    <ClCompile Include="SparseMatrixGame.cpp" />
     <ClCompile Include="tileBuffer.cpp" />
     <ClCompile Include="game.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="playPauseButton.h" />
+    <ClInclude Include="SparseMatrixGame.h" />
     <ClInclude Include="tileBuffer.h" />
     <ClInclude Include="game.h" />
   </ItemGroup>

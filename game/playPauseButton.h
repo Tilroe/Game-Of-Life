@@ -6,7 +6,7 @@ class Game;
 class PlayPauseButton
 {
 public:
-	PlayPauseButton(Game& game);
+	PlayPauseButton(Game* game);
 	~PlayPauseButton();
 	void update(float dt);
 	void handleInput(Vector2 mousePosition);
@@ -25,5 +25,5 @@ private:
 	Texture2D texture = LoadTexture(texturePath);
 	Rectangle textureSource{ 0, 0, 16, 16 };
 	Rectangle screenPosition{ 20, 20, 64, 64 };
-	Game& game;
+	Game* game;
 };

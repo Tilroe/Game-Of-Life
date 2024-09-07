@@ -1,5 +1,6 @@
 #include "raylib.h"
 #include "game.h"
+#include "SparseMatrixGame.h"
 #include "playPauseButton.h"
 
 int main() 
@@ -13,18 +14,19 @@ int main()
 	const int screenWidth = GetMonitorWidth(GetCurrentMonitor());
 	const int screenHeight = GetMonitorHeight(GetCurrentMonitor());
 
-	Game game(screenWidth, screenHeight);
+	SparseMatrixGame sparse;
+	Game* game = &sparse;
 	PlayPauseButton button(game);
 
 	while (!WindowShouldClose()) 
 	{
 		float dt = GetFrameTime();
-		game.update(dt);
+		game->update(dt);
 		button.update(dt);
 
 		BeginDrawing();
 		ClearBackground(RAYWHITE);
-		game.draw();
+		game->draw();
 		button.draw();
 		EndDrawing();
 	}
