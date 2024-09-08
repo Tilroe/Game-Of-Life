@@ -23,7 +23,7 @@ int main()
 		button.update(dt);
 
 		BeginDrawing();
-		ClearBackground(RAYWHITE);
+		ClearBackground(BLACK);
 		game.draw();
 		button.draw();
 		EndDrawing();

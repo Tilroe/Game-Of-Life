@@ -21,7 +21,10 @@ Game::~Game()
 
 void Game::update(float dt)
 {
-	// Only update if gone over update_time
+	// If paused, do not update
+	if (state == PAUSE) return;
+
+	// Perform update if gone over update time
 	time += dt;
 	if (time < update_time) return;
 	time = std::fmod(time, update_time);

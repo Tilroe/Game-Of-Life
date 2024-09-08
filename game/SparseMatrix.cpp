@@ -1,7 +1,9 @@
 
 #include "SparseMatrix.h"
-#include "point.h"
+
 #include <unordered_map>
+#include "point.h"
+#include "raylib.h"
 
 SparseMatrix::SparseMatrix(const int width, const int height) :
 	Kernel(width, height)
@@ -9,6 +11,11 @@ SparseMatrix::SparseMatrix(const int width, const int height) :
 	buffers = std::vector<std::unordered_set<Point>>(2, {});
 	current_ = &buffers[0];
 	next_ = &buffers[1];
+
+	current_->emplace(Point{ 5,5 });
+	current_->emplace(Point{ 6,5 });
+	current_->emplace(Point{ 7,5 });
+
 }
 
 void SparseMatrix::update()
@@ -62,7 +69,9 @@ void SparseMatrix::update()
 
 void SparseMatrix::draw() const
 {
-	return; // TODO
+	for (const Point& p : *current_) {
+		DrawRectangle(p.x * 32, p.y * 32, 32, 32, RAYWHITE);
+	}
 }
 
 void SparseMatrix::swap()
