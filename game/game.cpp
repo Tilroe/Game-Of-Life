@@ -86,11 +86,14 @@ void Game::draw() const
 {
 	Vector2 bounds = get_bounds();
 	BeginMode2D(camera);
+
+	current_kernel->draw();
+
+	// Draw bounds
 	DrawLineEx(Vector2{ 0, 0 }, Vector2{ bounds.x }, 20.f, GRAY);
 	DrawLineEx(Vector2{ bounds.x, 0 }, Vector2{ bounds.x, bounds.y }, 20.f, GRAY);
 	DrawLineEx(bounds, Vector2{ 0, bounds.y }, 10.f, GRAY);
 	DrawLineEx(Vector2{ 0, bounds.y }, Vector2{ 0, 0 }, 20.f, GRAY);
-	DrawCircle((int)camera.target.x, (int)camera.target.y, 20.f, RED);
-	current_kernel->draw();
+
 	EndMode2D();
 }
