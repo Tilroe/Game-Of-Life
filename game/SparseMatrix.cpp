@@ -74,6 +74,13 @@ void SparseMatrix::draw() const
 	}
 }
 
+void SparseMatrix::toggle(const int x, const int y)
+{
+	if (x < 0 || y < 0 || x >= width || y >= height) return;
+	if (current_->find(Point{ x, y }) == current_->end()) current_->emplace(Point{ x, y });
+	else current_->erase(Point{ x, y });
+}
+
 void SparseMatrix::swap()
 {
 	std::unordered_set<Point>* temp = current_;
