@@ -1,17 +1,17 @@
 #pragma once
-#include "raylib.h"
+#include "UI.h"
 
 class Game;
 
-class PlayPauseButton
+class PlayPauseButton :
+	public UI
 {
 public:
 	PlayPauseButton(Game* game);
 	~PlayPauseButton();
 	void update(float dt);
 	void handleInput(Vector2 mousePosition);
-	void draw();
-
+	void draw() const override;
 
 private:
 	enum ButtonState {
@@ -24,6 +24,5 @@ private:
 	const char* texturePath = "Content/PlayPause.png";
 	Texture2D texture = LoadTexture(texturePath);
 	Rectangle textureSource{ 0, 0, 16, 16 };
-	Rectangle screenPosition{ 20, 20, 64, 64 };
 	Game* game;
 };

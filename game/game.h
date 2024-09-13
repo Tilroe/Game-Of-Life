@@ -1,7 +1,9 @@
 #pragma once
 #include <vector>
 #include "raylib.h"
-#include "Kernel.h"
+
+class UI;
+class Kernel;
 
 class Game 
 {
@@ -10,6 +12,7 @@ public:
 	~Game();
 	void update(float dt);
 	void draw() const;
+	void register_ui(UI* ui);
 
 	enum GameState { PAUSE, PLAY };
 	inline GameState& get_game_state() { return state; }
@@ -27,9 +30,13 @@ private:
 	const int width, height;
 
 	// Kernel members
+	void handle_toggling();
 	Kernel* current_kernel;
 	std::vector<Kernel*> kernels;
 	float time = 0.f;
 	const float update_time = 0.5f;
 
+	// UI
+	std::vector<UI*> ui;
+	
 };

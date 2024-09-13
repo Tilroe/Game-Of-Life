@@ -15,6 +15,7 @@ int main()
 
 	Game game;
 	PlayPauseButton button(&game);
+	game.register_ui(&button);
 
 	while (!WindowShouldClose()) 
 	{

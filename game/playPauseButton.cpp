@@ -4,6 +4,7 @@
 PlayPauseButton::PlayPauseButton(Game* game) :
 	game(game)
 {
+	screen_position = Rectangle{ 20, 20, 64, 64 };
 }
 
 PlayPauseButton::~PlayPauseButton()
@@ -20,7 +21,7 @@ void PlayPauseButton::handleInput(Vector2 mousePosition)
 {
 	switch (buttonState) {
 	case Normal:
-		if (CheckCollisionPointRec(mousePosition, screenPosition)) 
+		if (CheckCollisionPointRec(mousePosition, screen_position)) 
 		{
 			buttonState = Hover;
 			textureSource = { 0, 16, 16, 16 };
@@ -28,7 +29,7 @@ void PlayPauseButton::handleInput(Vector2 mousePosition)
 		break;
 
 	case Hover:
-		if (!CheckCollisionPointRec(mousePosition, screenPosition))
+		if (!CheckCollisionPointRec(mousePosition, screen_position))
 		{
 			buttonState = Normal;
 			textureSource = { 0, 0, 16, 16 };
@@ -51,10 +52,10 @@ void PlayPauseButton::handleInput(Vector2 mousePosition)
 		break;
 
 	}
+	textureSource.x = (game->get_game_state() == Game::PAUSE) ? 0.0f : 16.0f;
 }
 
-void PlayPauseButton::draw()
+void PlayPauseButton::draw() const
 {
-	textureSource.x = (game->get_game_state() == Game::PAUSE) ? 0.0f : 16.0f;
-	DrawTexturePro(texture, textureSource, screenPosition, {0, 0}, 0.0, WHITE);
+	DrawTexturePro(texture, textureSource, screen_position, {0, 0}, 0.0, WHITE);
 }
