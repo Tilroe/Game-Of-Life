@@ -10,6 +10,7 @@ public:
     SparseMatrix(const int width, const int height);
     void update() override;
     void draw() const override;
+    void toggle(const int x, const int y) override;
 
 private:
     void swap() override;

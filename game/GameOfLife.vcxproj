@@ -190,6 +190,7 @@
     <ClCompile Include="playPauseButton.cpp" />
     <ClCompile Include="SparseMatrix.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Kernel.h" />
@@ -197,6 +198,7 @@
     <ClInclude Include="point.h" />
     <ClInclude Include="SparseMatrix.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="UI.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Content\PlayPause.png">

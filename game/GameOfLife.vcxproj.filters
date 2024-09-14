@@ -16,12 +16,15 @@
     <Filter Include="Source Files\Kernels">
       <UniqueIdentifier>{c9c6aee3-2c4b-4943-ab3e-93521637aca7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\UI">
+      <UniqueIdentifier>{b2123f2d-6251-4e06-bf6f-19ba37d6221c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI">
+      <UniqueIdentifier>{867852fe-7f21-451e-96e8-bfd68abd5c81}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="playPauseButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SparseMatrix.cpp">
@@ -33,11 +36,14 @@
     <ClCompile Include="Kernel.cpp">
       <Filter>Source Files\Kernels</Filter>
     </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="playPauseButton.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="playPauseButton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SparseMatrix.h">
       <Filter>Header Files\Kernels</Filter>
     </ClInclude>
@@ -49,6 +55,12 @@
     </ClInclude>
     <ClInclude Include="Kernel.h">
       <Filter>Header Files\Kernels</Filter>
+    </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="playPauseButton.h">
+      <Filter>Header Files\UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,10 @@
 #include "game.h"
 
 #include <cmath>
+#include <algorithm>
 #include "raymath.h"
+#include "UI.h"
+#include "Kernel.h"
 #include "SparseMatrix.h"
 
 
@@ -26,14 +29,30 @@ void Game::update(float dt)
 	handle_camera();
 
 	// Kernel updates
-	if (state == PLAY) {
+	switch (state) {
+	case PLAY:
 		time += dt;
 		if (time > update_time) {
 			time = std::fmod(time, update_time);
 			current_kernel->update();
 		}
+		break;
+	case PAUSE:
+		bool no_ui_collision = std::all_of(ui.begin(), ui.end(), 
+			[](UI* ui) { return !(ui->check_mouse_collision(GetMousePosition())); }
+		);
+		if (no_ui_collision) handle_toggling();
 	}
 	
+}
+
+void Game::handle_toggling()
+{
+	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+	{
+		Vector2 click_location = GetScreenToWorld2D(GetMousePosition(), camera);
+		current_kernel->toggle((int)click_location.x / TILE_SIZE, (int)click_location.y / TILE_SIZE);
+	}
 }
 
 // Camera helper function forward declarations
@@ -96,4 +115,9 @@ void Game::draw() const
 	DrawLineEx(Vector2{ 0, bounds.y }, Vector2{ 0, 0 }, 20.f, GRAY);
 
 	EndMode2D();
+}
+
+void Game::register_ui(UI* ui_element)
+{
+	ui.push_back(ui_element);
 }
