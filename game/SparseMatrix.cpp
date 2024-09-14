@@ -62,10 +62,10 @@ void SparseMatrix::update()
 	swap();
 }
 
-void SparseMatrix::draw() const
+void SparseMatrix::draw(const int TILE_SIZE) const
 {
 	for (const Point& p : *current_) {
-		DrawRectangle(p.x * 32, p.y * 32, 32, 32, RAYWHITE);
+		DrawRectangle(p.x * TILE_SIZE, p.y * TILE_SIZE, TILE_SIZE, TILE_SIZE, RAYWHITE);
 	}
 }
 

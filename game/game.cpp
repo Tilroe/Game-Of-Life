@@ -106,7 +106,7 @@ void Game::draw() const
 	Vector2 bounds = get_bounds();
 	BeginMode2D(camera);
 
-	current_kernel->draw();
+	current_kernel->draw(TILE_SIZE);
 
 	// Draw bounds
 	DrawLineEx(Vector2{ 0, 0 }, Vector2{ bounds.x }, 20.f, GRAY);
