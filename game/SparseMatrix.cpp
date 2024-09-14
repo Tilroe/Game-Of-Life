@@ -11,11 +11,6 @@ SparseMatrix::SparseMatrix(const int width, const int height) :
 	buffers = std::vector<std::unordered_set<Point>>(2, {});
 	current_ = &buffers[0];
 	next_ = &buffers[1];
-
-	current_->emplace(Point{ 5,5 });
-	current_->emplace(Point{ 6,5 });
-	current_->emplace(Point{ 7,5 });
-
 }
 
 void SparseMatrix::update()
