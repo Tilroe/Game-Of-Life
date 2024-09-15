@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameOfLife", "game\GameOfLi
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "raylib", "raylib\projects\VS2022\raylib\raylib.vcxproj", "{E89D61AC-55DE-4482-AFD4-DF7242EBC859}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HIP-Kernels", "HIP-Kernels\HIP-Kernels.vcxproj", "{C02FAD07-9195-4FFA-92A0-F1AE518BB429}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug (clang)|Win32 = Debug (clang)|Win32
@@ -51,6 +53,22 @@ Global
 		{E89D61AC-55DE-4482-AFD4-DF7242EBC859}.Release|Win32.Build.0 = Release|Win32
 		{E89D61AC-55DE-4482-AFD4-DF7242EBC859}.Release|x64.ActiveCfg = Release|x64
 		{E89D61AC-55DE-4482-AFD4-DF7242EBC859}.Release|x64.Build.0 = Release|x64
+		{C02FAD07-9195-4FFA-92A0-F1AE518BB429}.Debug.DLL|Win32.ActiveCfg = Debug (clang)|x64
+		{C02FAD07-9195-4FFA-92A0-F1AE518BB429}.Debug.DLL|Win32.Build.0 = Debug (clang)|x64
+		{C02FAD07-9195-4FFA-92A0-F1AE518BB429}.Debug.DLL|x64.ActiveCfg = Debug (clang)|x64
+		{C02FAD07-9195-4FFA-92A0-F1AE518BB429}.Debug.DLL|x64.Build.0 = Debug (clang)|x64
+		{C02FAD07-9195-4FFA-92A0-F1AE518BB429}.Debug|Win32.ActiveCfg = Debug (clang)|x64
+		{C02FAD07-9195-4FFA-92A0-F1AE518BB429}.Debug|Win32.Build.0 = Debug (clang)|x64
+		{C02FAD07-9195-4FFA-92A0-F1AE518BB429}.Debug|x64.ActiveCfg = Release (clang)|x64
+		{C02FAD07-9195-4FFA-92A0-F1AE518BB429}.Debug|x64.Build.0 = Release (clang)|x64
+		{C02FAD07-9195-4FFA-92A0-F1AE518BB429}.Release.DLL|Win32.ActiveCfg = Release (clang)|x64
+		{C02FAD07-9195-4FFA-92A0-F1AE518BB429}.Release.DLL|Win32.Build.0 = Release (clang)|x64
+		{C02FAD07-9195-4FFA-92A0-F1AE518BB429}.Release.DLL|x64.ActiveCfg = Release (clang)|x64
+		{C02FAD07-9195-4FFA-92A0-F1AE518BB429}.Release.DLL|x64.Build.0 = Release (clang)|x64
+		{C02FAD07-9195-4FFA-92A0-F1AE518BB429}.Release|Win32.ActiveCfg = Release (clang)|x64
+		{C02FAD07-9195-4FFA-92A0-F1AE518BB429}.Release|Win32.Build.0 = Release (clang)|x64
+		{C02FAD07-9195-4FFA-92A0-F1AE518BB429}.Release|x64.ActiveCfg = Release (clang)|x64
+		{C02FAD07-9195-4FFA-92A0-F1AE518BB429}.Release|x64.Build.0 = Release (clang)|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
