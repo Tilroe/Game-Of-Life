@@ -15,7 +15,7 @@
     <ClInclude Include="msvc_defines.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="kernel.hip" />
+    <ClCompile Include="kernels.hip" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

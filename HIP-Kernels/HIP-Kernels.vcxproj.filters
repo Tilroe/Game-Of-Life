@@ -23,7 +23,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="kernel.hip">
+    <ClCompile Include="kernels.hip">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
