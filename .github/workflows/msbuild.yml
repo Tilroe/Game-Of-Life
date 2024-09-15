@@ -24,10 +24,6 @@ permissions:
 jobs:
   build:
     runs-on: windows-latest
-
-    strategy:
-      matrix:
-        architecture: [Win32, x64]  # Specify the architectures here
     
     steps:
     - uses: actions/checkout@v4
@@ -47,4 +43,4 @@ jobs:
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       # Use the architecture from the matrix in the MSBuild command
-      run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:Platform=${{matrix.architecture}} ${{env.SOLUTION_FILE_PATH}}
+      run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}

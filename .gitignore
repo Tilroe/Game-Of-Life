@@ -1,9 +1,7 @@
-raylib-master
 _build
 _bin
 .vs
 .obsidian
-/bin
 /build
 Makefile
 obj
