@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kernels.h" />
+    <ClInclude Include="msvc_defines.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="kernel.hip" />
