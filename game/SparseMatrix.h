@@ -1,4 +1,4 @@
-
+#pragma once
 #include "Kernel.h"
 #include <unordered_set>
 #include "point.h"

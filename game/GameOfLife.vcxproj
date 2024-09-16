@@ -100,6 +100,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GPUKernel.cpp" />
     <ClCompile Include="Kernel.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="playPauseButton.cpp" />
@@ -108,6 +109,7 @@
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GPUKernel.h" />
     <ClInclude Include="Kernel.h" />
     <ClInclude Include="playPauseButton.h" />
     <ClInclude Include="point.h" />

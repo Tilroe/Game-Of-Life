@@ -42,6 +42,9 @@
     <ClCompile Include="playPauseButton.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
+    <ClCompile Include="GPUKernel.cpp">
+      <Filter>Source Files\Kernels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SparseMatrix.h">
@@ -61,6 +64,9 @@
     </ClInclude>
     <ClInclude Include="playPauseButton.h">
       <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="GPUKernel.h">
+      <Filter>Header Files\Kernels</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
