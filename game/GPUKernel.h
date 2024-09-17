@@ -12,6 +12,7 @@ public:
     void toggle(const int x, const int y) override;
 
 private:
+    void swap() override;
     std::vector<std::vector<int>> buffers;
     std::vector<int>* current_;
     std::vector<int>* next_;
