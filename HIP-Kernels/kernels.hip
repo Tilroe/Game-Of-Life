@@ -5,7 +5,7 @@ __inline__ __device__ int out_value(const int in_value, const int neighbours) {
 	else return (neighbours == 3 || neighbours == 2) ? 1 : 0;
 }
 
-__global__ void game_of_life_global(int* in, int* out, const int width, const int height)
+__global__ void Kernels::game_of_life_global(int* in, int* out, const int width, const int height)
 {
 	int x = blockDim.x * blockIdx.x + threadIdx.x;
 	int y = blockDim.y * blockIdx.y + threadIdx.y;

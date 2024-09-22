@@ -13,6 +13,12 @@
       <UniqueIdentifier>{9895f55f-ce19-4658-b8da-bc43ac23fb1a}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Interface">
+      <UniqueIdentifier>{0e0ec53f-0b1d-43d7-be0e-2517b3550013}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Interface">
+      <UniqueIdentifier>{9d29c5ce-358e-4f05-be12-b3a7f8fe15c6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kernels.h">
@@ -21,10 +27,25 @@
     <ClInclude Include="msvc_defines.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="hip_compatibility.h">
+      <Filter>Header Files\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="hip_kernel_interface.h">
+      <Filter>Header Files\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="hip_utility.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="kernels.hip">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hip_compatibility.hip">
+      <Filter>Source Files\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="hip_kernel_interface.hip">
+      <Filter>Source Files\Interface</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

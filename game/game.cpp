@@ -4,8 +4,10 @@
 #include <algorithm>
 #include "raymath.h"
 #include "UI.h"
+#include "hip_kernel_interface.h"
 #include "Kernel.h"
 #include "SparseMatrix.h"
+#include "GPUKernel.h"
 
 
 Game::Game(const int width, const int height) :
@@ -14,7 +16,9 @@ Game::Game(const int width, const int height) :
 {
 
 	kernels.push_back(new SparseMatrix(width, height));
-	current_kernel = kernels[0];
+	kernels.push_back(new GPUKernel(width, height));
+	allocate_hip_memory(width, height);
+	current_kernel = kernels[1];
 }
 
 Game::~Game()
@@ -22,6 +26,7 @@ Game::~Game()
 	for (Kernel* k : kernels) {
 		delete k;
 	}
+	free_hip_memory();
 }
 
 void Game::update(float dt)

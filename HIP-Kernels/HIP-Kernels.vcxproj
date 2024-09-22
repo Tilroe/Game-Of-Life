@@ -11,10 +11,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="hip_kernel_interface.h" />
+    <ClInclude Include="hip_compatibility.h" />
+    <ClInclude Include="hip_utility.h" />
     <ClInclude Include="kernels.h" />
     <ClInclude Include="msvc_defines.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="hip_compatibility.hip" />
+    <ClCompile Include="hip_kernel_interface.hip" />
     <ClCompile Include="kernels.hip" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

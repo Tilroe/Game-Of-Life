@@ -1,5 +1,7 @@
 #include "GPUKernel.h"
+#include "hip_kernel_interface.h"
 #include "raylib.h"
+#include <cstring>
 
 GPUKernel::GPUKernel(const int width, const int height) :
 	Kernel(width, height)
@@ -11,7 +13,9 @@ GPUKernel::GPUKernel(const int width, const int height) :
 
 void GPUKernel::update()
 {
-	next_->clear();
+	std::memset(next_->data(), 0, next_->size() * sizeof(int));
+	game_of_life_global(current_->data(), next_->data(), width, height);
+	swap();
 }
 
 void GPUKernel::draw(const int TILE_SIZE) const
